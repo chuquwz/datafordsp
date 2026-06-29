@@ -29,7 +29,16 @@ from src.embedding.product_embedding import (
 LOG_FILE = 'outputs/embedding_log.txt'
 os.makedirs('outputs', exist_ok=True)
 
-log = open(LOG_FILE, 'w', encoding='utf-8')
+try:
+    log = open(LOG_FILE, 'w', encoding='utf-8')
+except PermissionError:
+    try:
+        if os.path.exists(LOG_FILE):
+            os.remove(LOG_FILE)
+        log = open(LOG_FILE, 'w', encoding='utf-8')
+    except Exception:
+        LOG_FILE = 'embedding_log.txt'
+        log = open(LOG_FILE, 'w', encoding='utf-8')
 
 def p(msg):
     log.write(str(msg) + '\n')
