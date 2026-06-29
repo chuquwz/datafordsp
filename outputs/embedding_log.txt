@@ -1,0 +1,30 @@
+============================================================
+PHASE 4: MULTIMODAL PRODUCT EMBEDDING
+============================================================
+
+[1/5] Loading products and attributes data...
+  Merged catalog size: 2,244 products x 30 columns
+
+[2/5] Extracting product text representations...
+  Built concatenated texts. Average character length: 1536.2
+  Attempting deep learning sentence embeddings (MiniLM)...
+  SentenceTransformers not available. Using TF-IDF + PCA fallback.
+  Text representation shape: (2244, 128)
+
+[3/5] Extracting product image representations...
+  Checking image filenames in catalog. Found 2244 image entries.
+  Image files not present on disk. Using hash-based mock visual features.
+  Image representation shape: (2244, 128)
+
+[4/5] Encoding categorical and numerical metadata...
+  Metadata feature shape: (2244, 8)
+
+[5/5] Performing multimodal feature fusion and dimensionality reduction...
+  Final fused product embedding matrix shape: (2244, 128)
+
+  Saved product embeddings: dataset/after_EDA/product_embeddings.csv (5.7 MB)
+  Saved product mapping metadata: dataset/after_EDA/product_mapping.csv
+
+============================================================
+PHASE 4 COMPLETE - Multimodal product embedding successful!
+============================================================

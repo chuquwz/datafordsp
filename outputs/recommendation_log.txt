@@ -1,0 +1,114 @@
+============================================================
+PHASE 6: HYBRID RECOMMENDATION ENGINE EVALUATION
+============================================================
+
+[1/3] Initializing Segment-Aware Recommender...
+  Recommender initialized successfully.
+  Loaded transaction histories for 304,708 users.
+  Loaded category metadata for 2,244 products.
+  Segment rules pre-loaded: ['generalhibernating', 'negative_detractors', 'positive_enthusiasts', 'promising_newcomers_satisfied_group_0', 'promising_newcomers_satisfied_group_1']
+
+[2/3] Generating sample recommendations for each customer segment...
+  Selected 5 sample users for evaluation.
+
+  -------------------------------------------------------------
+  User ID: 40 | Segment: 💤 General/Hibernating
+  Purchase History (3 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - Combo Simple Tẩy trang 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml cho da sạch khỏe đàn hồi [CHÍNH HÃNG ĐỘC QUYỀN]
+  Recommended Products:
+    1. [simple] Combo Simple Tẩy trang Micellar 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml ngừa mụn hiệu quả [CHÍNH HÃNG ĐỘC QUYỀN] (Score: 0.3092)
+       💡 Explanation: Bought by other users in your segment '💤 General/Hibernating' who also bought 'Combo Simple Tẩy trang 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml cho da sạch khỏe đàn hồi [CHÍNH HÃNG ĐỘC QUYỀN]' (also shares similar skin type/features)
+    2. [simple] SỮA RỬA MẶT SIMPLE GIÚP DƯỠNG ẨM CHO DA TRÔNG KHỎE VÀ MỊN MÀNG 150ML [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.2871)
+       💡 Explanation: Bought by other users in your segment '💤 General/Hibernating' who also bought 'Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+    3. [no_brand] [Bạn mới nhập COSHBM -50% đơn 0Đ] [Loại 150ml] Sữa Rửa Mặt Simple Gel Kind To Skin Refreshing Facial Wash Gel (Score: 0.2620)
+       💡 Explanation: Bought by other users in your segment '💤 General/Hibernating' who also bought 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+    4. [SIMPLE PURE] [Hàng Auth] Bộ simple nước tẩy trang simple 200ml, sữa rửa mặt dành cho da nhạy cảm 150ml, nước hoa hồng simple 200ml (Score: 0.2590)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (32% match)
+    5. [simple] Gel Rửa Mặt Dành Cho Da Nhạy Cảm Simple Kind To Skin Refreshing Facial Wash Gel 150ml Hasaki Sản phẩm chính hãng (Score: 0.2584)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (32% match)
+
+  -------------------------------------------------------------
+  User ID: 14 | Segment: 🌱 Promising Newcomers (Satisfied) (Group 1)
+  Purchase History (2 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - SỮA RỬA MẶT SIMPLE GIÚP DƯỠNG ẨM CHO DA TRÔNG KHỎE VÀ MỊN MÀNG 150ML [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+  Recommended Products:
+    1. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.3777)
+       💡 Explanation: Bought by other users in your segment '🌱 Promising Newcomers (Satisfied) (Group 1)' who also bought 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+    2. [simple] Combo Simple Tẩy trang Micellar 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml ngừa mụn hiệu quả [CHÍNH HÃNG ĐỘC QUYỀN] (Score: 0.2904)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (34% match)
+    3. [SIMPLE PURE] [COMBO SIMPLE] Bộ 3 Nước Tẩy Trang, Sữa Rửa Mặt, Toner Simple (Score: 0.2676)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (33% match)
+    4. [simple] Gel Rửa Mặt Dành Cho Da Nhạy Cảm Simple Kind To Skin Refreshing Facial Wash Gel 150ml Hasaki Sản phẩm chính hãng (Score: 0.2656)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (32% match)
+    5. [simple] Sữa rửa mặt Simple giúp da sạch thoáng & không chứa xà phòng 150ml [My Xeko] (Score: 0.2649)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (40% match)
+
+  -------------------------------------------------------------
+  User ID: 1296 | Segment: 🗯️ Negative Detractors
+  Purchase History (2 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - Sữa rửa mặt da dầu mụn La Roche Posay Effaclar Purifying Foaming Gel Cleanser
+  Recommended Products:
+    1. [La Roche-Posay] [Mã COSACD10 giảm 10% đơn 600K] Gel rửa mặt tạo bọt cho da dầu nhạy cảm La RochePosay 400ml (Score: 0.2899)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt da dầu mụn La Roche Posay Effaclar Purifying Foaming Gel Cleanser' (46% match)
+    2. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.2867)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (36% match)
+    3. [La Roche-Posay] Sữa Rửa Mặt Tạo Bọt LA ROCHE POSAY Effaclar Purifying Foaming cho da dầu, nhạy cảm 50ml (Score: 0.2672)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt da dầu mụn La Roche Posay Effaclar Purifying Foaming Gel Cleanser' (47% match)
+    4. [La Roche-Posay] Sữa Rửa Mặt Tạo Bọt La Roche-Posay Effaclar Cho Da Dầu Nhạy Cảm 400ml (Score: 0.2671)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt da dầu mụn La Roche Posay Effaclar Purifying Foaming Gel Cleanser' (49% match)
+    5. [La Roche-Posay] [Mã COSACD10 giảm 10% đơn 600K] Bộ sản phẩm làm sạch và bảo vệ da dầu nhạy cảm La RochePosay Effaclar Gel (Score: 0.2575)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt da dầu mụn La Roche Posay Effaclar Purifying Foaming Gel Cleanser' (39% match)
+
+  -------------------------------------------------------------
+  User ID: 413 | Segment: 🌱 Promising Newcomers (Satisfied) (Group 0)
+  Purchase History (2 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+  Recommended Products:
+    1. [simple] Combo Simple Tẩy trang 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml cho da sạch khỏe đàn hồi [CHÍNH HÃNG ĐỘC QUYỀN] (Score: 0.2889)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (40% match)
+    2. [simple] SỮA RỬA MẶT SIMPLE GIÚP DƯỠNG ẨM CHO DA TRÔNG KHỎE VÀ MỊN MÀNG 150ML [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.2713)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (34% match)
+    3. [simple] Combo Simple Tẩy trang Micellar 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml ngừa mụn hiệu quả [CHÍNH HÃNG ĐỘC QUYỀN] (Score: 0.2631)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (34% match)
+    4. [simple] Gel Rửa Mặt Dành Cho Da Nhạy Cảm Simple Kind To Skin Refreshing Facial Wash Gel 150ml Hasaki Sản phẩm chính hãng (Score: 0.2584)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (32% match)
+    5. [simple] Sữa Rửa Mặt Dành Cho Da Nhạy Cảm Simple Kind To Skin Refreshing Facial Wash Gel 150ml (Score: 0.2550)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (46% match)
+
+  -------------------------------------------------------------
+  User ID: 8296 | Segment: ✨ Positive Enthusiasts
+  Purchase History (2 products):
+    - 🌈🍒🍭 Sữa Rửa Mặt Senana Lấy Sạch Bụi Bẩn Giúp Da Trắng Sáng-Y3-K6T3
+    - Sữa Rửa Mặt Acnes Vitamin Cleanser 25g tiện để túi và mang đi du lịch.
+  Recommended Products:
+    1. [Acnes] [ Hàng Mẫu Dùng Thử] Kem Rửa Mặt Acnes Vitamin Cleanser 25g rất tiện cầm mang đi du lịch (Score: 0.4401)
+       💡 Explanation: Bought by other users in your segment '✨ Positive Enthusiasts' who also bought 'Sữa Rửa Mặt Acnes Vitamin Cleanser 25g tiện để túi và mang đi du lịch.' (also shares similar skin type/features)
+    2. [Acnes] Sửa Rửa Mặt Acnes Ngăn Ngừa Mụn, Mờ Thâm 100g (Score: 0.3313)
+       💡 Explanation: Similar ingredients or features to 'Sữa Rửa Mặt Acnes Vitamin Cleanser 25g tiện để túi và mang đi du lịch.' (63% match)
+    3. [Acnes] Sữa rửa mặt Acnes 25g/50g (Score: 0.3127)
+       💡 Explanation: Similar ingredients or features to 'Sữa Rửa Mặt Acnes Vitamin Cleanser 25g tiện để túi và mang đi du lịch.' (58% match)
+    4. [Compliment] Gel rửa mặt BHA Compliment No Problem làm sạch sâu, giảm viêm & mụn 200ml (Score: 0.3080)
+       💡 Explanation: Similar ingredients or features to 'Sữa Rửa Mặt Acnes Vitamin Cleanser 25g tiện để túi và mang đi du lịch.' (38% match)
+    5. [Acnes] [ Hàng Mẫu Dùng Thử ] Sữa Rửa mặt Trắng Da Bùn Non Acnes Baby Mud 25g (Score: 0.2953)
+       💡 Explanation: Similar ingredients or features to 'Sữa Rửa Mặt Acnes Vitamin Cleanser 25g tiện để túi và mang đi du lịch.' (54% match)
+
+  Saved sample recommendation runs: outputs/tables/recommender_samples.csv
+
+[3/3] Evaluating recommendation engine quality...
+  Running batch evaluation on 200 random users...
+
+  Recommendation Engine Performance Metrics:
+    1. Catalog Coverage: 23.84% (535 out of 2244 products recommended)
+    2. Recommendation Diversity (1 - Avg Similarity): 0.6744 (higher means recommended items are less redundant)
+    3. MBA Rule Hit Rate: 9.5% (percentage of recommendations driven by association rules)
+    4. Content Similarity Hit Rate: 89.5% (percentage of recommendations driven by content similarity)
+  Saved: outputs/tables/recommender_evaluation_metrics.csv
+
+============================================================
+PHASE 6 COMPLETE - Hybrid recommendation engine evaluation successful!
+============================================================

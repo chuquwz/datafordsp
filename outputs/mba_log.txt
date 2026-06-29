@@ -1,0 +1,91 @@
+============================================================
+PHASE 5: MARKET BASKET ANALYSIS (SEMANTIC RULES MINING)
+============================================================
+
+[1/4] Loading segmented transactions and product embeddings...
+  Reviews transaction entries: 369,099
+  Segmented customers: 304,708
+  Product embeddings loaded: 2244
+
+[2/4] Constructing user-lifetime transaction baskets...
+  Total customer baskets (size >= 2): 28,477
+  Average customer basket size: 2.17 products
+
+[3/4] Mining global association rules...
+  Mined 241 global association rules.
+
+  Top 15 Global Rules (sorted by lift):
+                                                                                             antecedent_name                                                                                              consequent_name  support  confidence        lift  semantic_similarity  same_brand
+                                Gel Rửa Mặt BHA Compliment No Problem 200ml Giảm Viêm, Mụn - Hàng Chính Hãng Sữa rửa mặt trắng da The Face Shop Hàn Quốc White Seed Exfoliating Foam Cleanser 150ml dưỡng cấp ẩm sạch sâu 0.000562    0.800000 1340.094118            -0.183095       False
+Sữa rửa mặt trắng da The Face Shop Hàn Quốc White Seed Exfoliating Foam Cleanser 150ml dưỡng cấp ẩm sạch sâu                                 Gel Rửa Mặt BHA Compliment No Problem 200ml Giảm Viêm, Mụn - Hàng Chính Hãng 0.000562    0.941176 1340.094118            -0.183095       False
+                                                                                SỬA RỬA MẶT CAO SÂM MẬT NHÂN                                               Sữa Rửa Mặt Sạch Sâu Ngừa Mụn Foaming Wash Fresh Dr Cell 150ml 0.001194    0.918919  747.658687            -0.015405       False
+                                              Sữa Rửa Mặt Sạch Sâu Ngừa Mụn Foaming Wash Fresh Dr Cell 150ml                                                                                 SỬA RỬA MẶT CAO SÂM MẬT NHÂN 0.001194    0.971429  747.658687            -0.015405       False
+                                                     SỮA RỬA MẶT TRÀ XANH GREEN TEA 3W CLINIC HÀN QUỐC 100ML                                          SỮA RỬA MẶT GẠO BROWN RICE FOAM CLEANSING 3W CILINIC HÀN QUỐC 100ML 0.000667    0.441860  466.031869             0.358195        True
+                                         SỮA RỬA MẶT GẠO BROWN RICE FOAM CLEANSING 3W CILINIC HÀN QUỐC 100ML                                                      SỮA RỬA MẶT TRÀ XANH GREEN TEA 3W CLINIC HÀN QUỐC 100ML 0.000667    0.703704  466.031869             0.358195        True
+                                                  [XẢ KHO] SỮA RỬA MẶT CẤP NƯỚC CHỐNG OXY HOÁ WHOO HỒNG 40ML                                                               [XẢ KHO] Sữa rửa mặt Whoo vàng hoàng cung 40ml 0.001018    0.783784  275.553220             0.181903        True
+                                                              [XẢ KHO] Sữa rửa mặt Whoo vàng hoàng cung 40ml                                                   [XẢ KHO] SỮA RỬA MẶT CẤP NƯỚC CHỐNG OXY HOÁ WHOO HỒNG 40ML 0.001018    0.358025  275.553220             0.181903        True
+     Sữa rửa mặt nam 30Shine phân phối chính hãng Skin&dr Tràm trà 80g cho da mụn, da dầu, dưỡng ẩm trắng da                                          Sữa Rửa Mặt Cho Nam Skin&Dr Than Hoạt Tính 100g - Trắng da kiềm dầu 0.001580    0.548780  159.465530            -0.017915        True
+                                         Sữa Rửa Mặt Cho Nam Skin&Dr Than Hoạt Tính 100g - Trắng da kiềm dầu      Sữa rửa mặt nam 30Shine phân phối chính hãng Skin&dr Tràm trà 80g cho da mụn, da dầu, dưỡng ẩm trắng da 0.001580    0.459184  159.465530            -0.017915        True
+                                                    Bộ Dụng Cụ Vệ Sinh Mano: 1000 Chuyên Dụng Chất Lượng Cao                                                    Sữa rửa mặt tạo bọt ma:nyo Pore Cleansing Soda Foam 150ml 0.001159    0.305556  135.957899             0.365967        True
+                                                   Sữa rửa mặt tạo bọt ma:nyo Pore Cleansing Soda Foam 150ml                                                     Bộ Dụng Cụ Vệ Sinh Mano: 1000 Chuyên Dụng Chất Lượng Cao 0.001159    0.515625  135.957899             0.365967        True
+              Sữa rửa mặt dưỡng da tươi sáng và căng mọng Bio-essence Bio-Bird's Nest Collagen Cleanser 100g                Sữa rửa mặt ngừa lão hóa Bi-Essence BioGold BioEssence Gold Cleanser chiết xuất vàng 24k 100g 0.000773    0.343750  132.283361             0.429242        True
+               Sữa rửa mặt ngừa lão hóa Bi-Essence BioGold BioEssence Gold Cleanser chiết xuất vàng 24k 100g               Sữa rửa mặt dưỡng da tươi sáng và căng mọng Bio-essence Bio-Bird's Nest Collagen Cleanser 100g 0.000773    0.297297  132.283361             0.429242        True
+                                                            Kem rửa mặt ngăn ngừa mụn Acnes Creamy Wash 100g                                      Sữa rửa mặt dưỡng trắng và ngăn ngừa mụn Acnes Pure White Cleanser 100g 0.000667    0.204301   93.836802             0.320986        True
+
+  Saved: outputs/tables/global_association_rules.csv
+
+[4/4] Mining segment-aware association rules (rules per customer segment)...
+
+  Segment: 💤 General/Hibernating
+    Mined rules: 1699
+                                                      antecedent_name                                                                      consequent_name  support  confidence  lift  semantic_similarity
+                                   Sữa rửa mặt Hoa Cúc 1000ml cho spa                                                     Sửa Rửa Mặt  Tặng Kèm Chai Toner 0.001264         1.0 791.0             0.017756
+                                     Sửa Rửa Mặt  Tặng Kèm Chai Toner                                                   Sữa rửa mặt Hoa Cúc 1000ml cho spa 0.001264         1.0 791.0             0.017756
+                                             Sữa rửa mặt bọt Caudalie                             Sữa rửa mặt tạo bọt Caudalie 150ml hàng Air nội địa Pháp 0.001264         1.0 791.0             0.083031
+Sữa Rửa Mặt Dove Tinh Chất Beauty Serum Cấp Ẩm & Cho Da Mềm Mượt 130g                                                          Sữa Rửa Mặt Huxley Dạng Gel 0.001264         1.0 791.0            -0.034859
+Sữa rửa mặt Olay Sáng Da Total Effects 7 in 1 Refreshing Citrus 150ml [Hàng Mỹ] Sữa rửa mặt Olay Regenerist /Luminous /Total Effects Face Cleanser (150ml) 0.001264         1.0 791.0             0.139507
+    Saved: outputs/tables/segment_rules_generalhibernating.csv
+
+  Segment: 🌱 Promising Newcomers (Satisfied) (Group 1)
+    Mined rules: 263
+                                                                                             antecedent_name                                                                                              consequent_name  support  confidence       lift  semantic_similarity
+Sữa rửa mặt trắng da The Face Shop Hàn Quốc White Seed Exfoliating Foam Cleanser 150ml dưỡng cấp ẩm sạch sâu                                 Gel Rửa Mặt BHA Compliment No Problem 200ml Giảm Viêm, Mụn - Hàng Chính Hãng 0.000772    0.941176 975.482353            -0.183095
+                                Gel Rửa Mặt BHA Compliment No Problem 200ml Giảm Viêm, Mụn - Hàng Chính Hãng Sữa rửa mặt trắng da The Face Shop Hàn Quốc White Seed Exfoliating Foam Cleanser 150ml dưỡng cấp ẩm sạch sâu 0.000772    0.800000 975.482353            -0.183095
+                                                                                SỬA RỬA MẶT CAO SÂM MẬT NHÂN                                               Sữa Rửa Mặt Sạch Sâu Ngừa Mụn Foaming Wash Fresh Dr Cell 150ml 0.001640    0.944444 559.353968            -0.015405
+                                              Sữa Rửa Mặt Sạch Sâu Ngừa Mụn Foaming Wash Fresh Dr Cell 150ml                                                                                 SỬA RỬA MẶT CAO SÂM MẬT NHÂN 0.001640    0.971429 559.353968            -0.015405
+                                                 Sữa rửa mặt nam RHYS MAN hương dừa Rhys Coconut Fresh 100ml                                         Sữa rửa mặt nam RHYS MAN Rhys Coconut Fresh hương dừa thơm mát 100ml 0.000579    0.500000 345.483333             0.481033
+    Saved: outputs/tables/segment_rules_promising_newcomers_satisfied_group_1.csv
+
+  Segment: 🗯️ Negative Detractors
+    Mined rules: 220
+                                                                              antecedent_name                                                                               consequent_name  support  confidence  lift  semantic_similarity
+            Sữa Rửa Mặt BIOAQUA Vị Đào Tạo Bọt Nhẹ Nhàng Làm Sạch Dưỡng Ẩm Và Làm Trắng 100gr                                                      Sữa rửa mặt gạo Civic Rice milk Thái Lan 0.010753         1.0  93.0             0.172765
+                                                     Sữa rửa mặt gạo Civic Rice milk Thái Lan             Sữa Rửa Mặt BIOAQUA Vị Đào Tạo Bọt Nhẹ Nhàng Làm Sạch Dưỡng Ẩm Và Làm Trắng 100gr 0.010753         1.0  93.0             0.172765
+              Sữa rửa mặt Ý Dĩ Hatomugi dưỡng ẩm, trắng da Moisturizing & Facial Washing 170g Sữa rửa mặt dưỡng ẩm, ngừa mụn, làm sáng da ý dĩ Hatomugi Nhật Bản 130g, 170g  [xanh - trắng] 0.010753         1.0  93.0            -0.024194
+Sữa rửa mặt dưỡng ẩm, ngừa mụn, làm sáng da ý dĩ Hatomugi Nhật Bản 130g, 170g  [xanh - trắng]               Sữa rửa mặt Ý Dĩ Hatomugi dưỡng ẩm, trắng da Moisturizing & Facial Washing 170g 0.010753         1.0  93.0            -0.024194
+                                  Sữa Rửa Mặt Dạng Gel Cosrx Low pH Good Morning Gel Cleanser                                                          Sữa Rửa Mặt Trà Xanh Innisfree 150ml 0.010753         1.0  93.0            -0.342065
+    Saved: outputs/tables/segment_rules_negative_detractors.csv
+
+  Segment: 🌱 Promising Newcomers (Satisfied) (Group 0)
+    Mined rules: 284
+                                                       antecedent_name                                                        consequent_name  support  confidence       lift  semantic_similarity
+Sữa Rửa Mặt St.Ives - St.Ives sữa rửa mặt tẩy tế bào chết dịu nhẹ 170g  Sữa Rửa Mặt St.Ives Dạng Gel - St.Ives Daily Facial Cleaner Gel 200ml 0.000647    0.571429 504.816327             0.047677
+ Sữa Rửa Mặt St.Ives Dạng Gel - St.Ives Daily Facial Cleaner Gel 200ml Sữa Rửa Mặt St.Ives - St.Ives sữa rửa mặt tẩy tế bào chết dịu nhẹ 170g 0.000647    0.571429 504.816327             0.047677
+               SỮA RỬA MẶT TRÀ XANH GREEN TEA 3W CLINIC HÀN QUỐC 100ML    SỮA RỬA MẶT GẠO BROWN RICE FOAM CLEANSING 3W CILINIC HÀN QUỐC 100ML 0.000809    0.416667 368.095238             0.358195
+   SỮA RỬA MẶT GẠO BROWN RICE FOAM CLEANSING 3W CILINIC HÀN QUỐC 100ML                SỮA RỬA MẶT TRÀ XANH GREEN TEA 3W CLINIC HÀN QUỐC 100ML 0.000809    0.714286 368.095238             0.358195
+                         Sữa Rửa Mặt Herb Day 365 Cleansing Foam 170ML                Sữa rửa mặt Herbday 365 mẫu mới 170ml của The Face Shop 0.000647    0.250000 309.200000             0.218902
+    Saved: outputs/tables/segment_rules_promising_newcomers_satisfied_group_0.csv
+
+  Segment: ✨ Positive Enthusiasts
+    Mined rules: 1014
+                                                                                                     antecedent_name                                                                                                      consequent_name  support  confidence  lift  semantic_similarity
+                                                                             Sữa rửa mặt NIVEA TẠO BỌT SIÊU MỊN 50ml                                                                         SỬA RỬA MẶT NGHỆ DƯỠNG ẨM & TRẮNG DA  RELOVE 0.001471         1.0 680.0             0.184424
+                                                                        SỬA RỬA MẶT NGHỆ DƯỠNG ẨM & TRẮNG DA  RELOVE                                                                              Sữa rửa mặt NIVEA TẠO BỌT SIÊU MỊN 50ml 0.001471         1.0 680.0             0.184424
+         [Mã BMLT30 giảm đến 30K đơn 299K] Gel rửa mặt ngăn ngừa mụn Truesky Centella Cleanser chiết xuất rau má 50g [Mã BMLT30 giảm đến 30K đơn 299K] Sữa rửa mặt sáng da và dưỡng ẩm Truesky Glutathione Cleanser chiết xuất sữa dê 50g 0.001471         1.0 680.0             0.168402
+[Mã BMLT30 giảm đến 30K đơn 299K] Sữa rửa mặt sáng da và dưỡng ẩm Truesky Glutathione Cleanser chiết xuất sữa dê 50g          [Mã BMLT30 giảm đến 30K đơn 299K] Gel rửa mặt ngăn ngừa mụn Truesky Centella Cleanser chiết xuất rau má 50g 0.001471         1.0 680.0             0.168402
+                     [ 100% Korea] Sửa rửa mặt 3w clinic trà xanh / Gạo 100ml sáng da , hỗ trợ giảm và ngăn ngừa mụn                                                                            Sữa rửa mặt tinh chất trà xanh cho da mụn 0.001471         1.0 680.0            -0.145183
+    Saved: outputs/tables/segment_rules_positive_enthusiasts.csv
+
+============================================================
+PHASE 5 COMPLETE - Market basket analysis successful!
+============================================================

@@ -1,0 +1,79 @@
+============================================================
+PHASE 3: CUSTOMER SEGMENTATION (SA-RFM CLUSTERING)
+============================================================
+
+[1/7] Loading SA-RFM datasets...
+  Vectors loaded: 304,708 users x 5 columns
+  Table loaded: 304,708 users x 9 columns
+
+[2/7] Evaluating K-Means++ clustering for K in [2, 7]...
+
+  Clustering Metrics:
+ k        wcss  silhouette      dbi
+ 2 6339.333061    0.477740 0.876746
+ 3 3511.868824    0.513715 0.665395
+ 4 2593.545090    0.457082 0.698749
+ 5 2075.244075    0.479574 0.669566
+ 6 1744.177104    0.392653 0.759557
+ 7 1471.813980    0.442767 0.767191
+
+  Saved: outputs/tables/clustering_evaluation_metrics.csv
+  Saved evaluation plot: outputs/figures/segmentation_evaluation.png
+
+[3/7] Setting optimal K = 5 based on metrics and domain coverage
+
+[4/7] Fitting K-Means++, GMM, and BIRCH models with K=5...
+
+  Model Comparison:
+                dbi       sil
+K-Means++  0.669566  0.479972
+GMM        1.866655  0.179545
+BIRCH      0.674039  0.436386
+
+  Saved: outputs/tables/model_comparison.csv
+
+[5/7] Naming customer segments based on cluster centroids...
+
+  Cluster Names and Centroids:
+
+  Cluster 0 -> 🌱 Promising Newcomers (Satisfied) (Group 0):
+    Recency (norm): 0.7777
+    Frequency (norm): 0.0067
+    Monetary (norm): 0.0441
+    Sentiment (norm): 0.9996
+
+  Cluster 1 -> 🌱 Promising Newcomers (Satisfied) (Group 1):
+    Recency (norm): 0.9343
+    Frequency (norm): 0.0152
+    Monetary (norm): 0.0484
+    Sentiment (norm): 0.9993
+
+  Cluster 2 -> 🗯️ Negative Detractors:
+    Recency (norm): 0.8655
+    Frequency (norm): 0.0023
+    Monetary (norm): 0.0362
+    Sentiment (norm): 0.0944
+
+  Cluster 3 -> 💤 General/Hibernating:
+    Recency (norm): 0.8802
+    Frequency (norm): 0.0069
+    Monetary (norm): 0.0430
+    Sentiment (norm): 0.6808
+
+  Cluster 4 -> ✨ Positive Enthusiasts:
+    Recency (norm): 0.5388
+    Frequency (norm): 0.0040
+    Monetary (norm): 0.0442
+    Sentiment (norm): 0.9937
+
+[6/7] Generating segment profiles and aggregating raw stats...
+  Saved profile stats: outputs/tables/segment_profiles.csv
+  Saved segmented customer table: dataset/after_EDA/sarfm_segmented.csv (35.1 MB)
+
+[7/7] Plotting customer segment profiles and 2D projections...
+  Saved radar/parallel-coordinates centroid chart: outputs/figures/segment_centroids_radar.png
+  Saved 2D PCA cluster projection: outputs/figures/segment_scatter_2d.png
+
+============================================================
+PHASE 3 COMPLETE - Customer segmentation successful!
+============================================================
