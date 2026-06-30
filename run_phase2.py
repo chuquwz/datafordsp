@@ -18,6 +18,7 @@ FIX LOG (2026-06-30):
   - Increased batch_size to 64 for better GPU throughput
   - Added print() alongside log so output is visible in Colab cells
   - Added total elapsed time report at completion
+  - Auto-detects Kaggle / Colab / Local environment and sets paths accordingly
 """
 
 import os
@@ -29,36 +30,80 @@ from collections import defaultdict
 from datetime import datetime
 
 # ============================================================
-# CONFIGURATION -- adjust these before running on Colab
+# CONFIGURATION
 # ============================================================
 
 # Set False to skip PhoBERT entirely and use fast rating-based MODE 1
 USE_PHOBERT = True
 
-# Maximum reviews to run through PhoBERT (set None for unlimited).
-# 500_000 reviews takes ~30-60 min on a T4 GPU.
-MAX_PHOBERT_REVIEWS = 500_000
-
-# PhoBERT batch size (increase for bigger GPUs: A100 -> 128)
+# PhoBERT batch size
+#   T4  (Colab / Kaggle free) -> 64
+#   P100 (Kaggle)             -> 96
+#   A100 (Colab Pro+)         -> 128
 PHOBERT_BATCH_SIZE = 64
 
-# Save checkpoint every N reviews so we can resume after crashes
+# Save checkpoint every N reviews (resume on crash/timeout)
 CHECKPOINT_EVERY = 50_000
 
-# Paths (relative to script / Google Drive mount)
-REVIEWS_PATH    = "dataset/after_EDA/reviews_cleaned.csv"
-RFM_PATH        = "dataset/after_EDA/rfm_table.csv"
-OUT_SARFM       = "dataset/after_EDA/sarfm_table.csv"
-OUT_VECTORS     = "dataset/after_EDA/sarfm_vectors.csv"
-CHECKPOINT_PATH = "outputs/phobert_checkpoint.csv"
+# ---- Kaggle-specific: name of your uploaded dataset ----
+# Go to kaggle.com -> Datasets -> New Dataset, upload the after_EDA folder,
+# then paste the slug here (shown in the dataset URL).
+KAGGLE_DATASET_SLUG = "your-username/tiki-after-eda"   # <-- CHANGE THIS
 
 # End of data collection period (for recency weighting)
 MAX_DATE = datetime(2023, 1, 7)
 
 # ============================================================
+# ENVIRONMENT DETECTION  (Kaggle / Colab / Local)
+# ============================================================
 
-LOG_FILE = "outputs/sentiment_log.txt"
-os.makedirs("outputs", exist_ok=True)
+_ON_KAGGLE = os.path.exists("/kaggle/working")
+_ON_COLAB  = not _ON_KAGGLE and os.path.exists("/content")
+
+if _ON_KAGGLE:
+    # --------------- KAGGLE ---------------
+    # Input: /kaggle/input/<dataset-slug>/
+    # Output: /kaggle/working/  (persisted, downloadable)
+    _INPUT   = f"/kaggle/input/{KAGGLE_DATASET_SLUG}"
+    _OUTPUT  = "/kaggle/working"
+    # Kaggle gives 9h sessions on GPU -> safe to process everything
+    MAX_PHOBERT_REVIEWS = None   # unlimited
+    print(f"[ENV] Kaggle detected | input={_INPUT} | output={_OUTPUT}")
+
+elif _ON_COLAB:
+    # --------------- COLAB ---------------
+    # Mount Drive first:  from google.colab import drive; drive.mount('/content/drive')
+    # Then set _DRIVE to your project folder.
+    _DRIVE   = "/content/drive/MyDrive/DSP"   # <-- change if your folder differs
+    _INPUT   = _DRIVE
+    _OUTPUT  = _DRIVE
+    # Colab free tier disconnects after ~90 min of idle -> cap at 500k
+    MAX_PHOBERT_REVIEWS = 500_000
+    print(f"[ENV] Colab detected  | drive={_DRIVE}")
+
+else:
+    # --------------- LOCAL ---------------
+    _INPUT   = "."
+    _OUTPUT  = "."
+    MAX_PHOBERT_REVIEWS = 500_000
+    print("[ENV] Local machine")
+
+# Build final paths
+REVIEWS_PATH    = os.path.join(_INPUT,  "dataset/after_EDA/reviews_cleaned.csv")
+RFM_PATH        = os.path.join(_INPUT,  "dataset/after_EDA/rfm_table.csv")
+OUT_DIR         = os.path.join(_OUTPUT, "dataset/after_EDA")
+OUT_SARFM       = os.path.join(OUT_DIR, "sarfm_table.csv")
+OUT_VECTORS     = os.path.join(OUT_DIR, "sarfm_vectors.csv")
+CHECKPOINT_PATH = os.path.join(_OUTPUT, "outputs/phobert_checkpoint.csv")
+LOG_FILE        = os.path.join(_OUTPUT, "outputs/sentiment_log.txt")
+
+os.makedirs(os.path.join(_OUTPUT, "outputs"),      exist_ok=True)
+os.makedirs(OUT_DIR,                               exist_ok=True)
+
+print(f"[ENV] REVIEWS_PATH    = {REVIEWS_PATH}")
+print(f"[ENV] RFM_PATH        = {RFM_PATH}")
+print(f"[ENV] OUT_SARFM       = {OUT_SARFM}")
+print(f"[ENV] MAX_PHOBERT_REVIEWS = {MAX_PHOBERT_REVIEWS}")
 
 try:
     log = open(LOG_FILE, "w", encoding="utf-8")
