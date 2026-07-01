@@ -1,0 +1,114 @@
+============================================================
+PHASE 6: HYBRID RECOMMENDATION ENGINE EVALUATION
+============================================================
+
+[1/3] Initializing Segment-Aware Recommender...
+  Recommender initialized successfully.
+  Loaded transaction histories for 304,708 users.
+  Loaded category metadata for 2,244 products.
+  Segment rules pre-loaded: ['negative_detractors', 'generalhibernating_group_1', 'promising_newcomers_satisfied', 'generalhibernating_group_4', 'generalhibernating_group_0']
+
+[2/3] Generating sample recommendations for each customer segment...
+  Selected 5 sample users for evaluation.
+
+  -------------------------------------------------------------
+  User ID: 227 | Segment: 🗯️ Negative Detractors
+  Purchase History (2 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - (80g) Sữa Rửa Mặt HADA LABO Chính Hãng Công Ty Mẫu Mới
+  Recommended Products:
+    1. [Hada Labo] (80g) Sữa rửa mặt HADA LABO chính hãng công ty (Score: 0.4000)
+       💡 Explanation: Similar ingredients or features to '(80g) Sữa Rửa Mặt HADA LABO Chính Hãng Công Ty Mẫu Mới' (80% match)
+    2. [simple] Sữa rửa mặt Simple giúp da sạch thoáng & không chứa xà phòng 150ml [My Xeko] (Score: 0.3710)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (73% match)
+    3. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.3672)
+       💡 Explanation: Bought by other users in your segment '🗯️ Negative Detractors' who also bought 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+    4. [Hada Labo] Sữa rửa mặt HADA LABO (Score: 0.3486)
+       💡 Explanation: Similar ingredients or features to '(80g) Sữa Rửa Mặt HADA LABO Chính Hãng Công Ty Mẫu Mới' (68% match)
+    5. [simple] SỮA RỬA MẶT SIMPLE GIÚP DƯỠNG ẨM CHO DA TRÔNG KHỎE VÀ MỊN MÀNG 150ML [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.3475)
+       💡 Explanation: Bought by other users in your segment '🗯️ Negative Detractors' who also bought 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+
+  -------------------------------------------------------------
+  User ID: 14 | Segment: 💤 General/Hibernating (Group 1)
+  Purchase History (2 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - SỮA RỬA MẶT SIMPLE GIÚP DƯỠNG ẨM CHO DA TRÔNG KHỎE VÀ MỊN MÀNG 150ML [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+  Recommended Products:
+    1. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.3854)
+       💡 Explanation: Bought by other users in your segment '💤 General/Hibernating (Group 1)' who also bought 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+    2. [simple] Sữa rửa mặt Simple giúp da sạch thoáng & không chứa xà phòng 150ml [My Xeko] (Score: 0.3710)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (73% match)
+    3. [no_brand] Sữa Rửa Mặt Vitamin E Thái Lan 190g (Score: 0.3146)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (59% match)
+    4. [no_brand] [Giá Tốt] Tuýp Sữa Rửa Mặt VitaMin E Thái Lan (Score: 0.3068)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (45% match)
+    5. [simple] [Chính hãng] Sữa rửa mặt Simple giúp da sạch thoáng & không chứa xà phòng 150ml (Score: 0.2960)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (54% match)
+
+  -------------------------------------------------------------
+  User ID: 40 | Segment: 🌱 Promising Newcomers (Satisfied)
+  Purchase History (3 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - Combo Simple Tẩy trang 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml cho da sạch khỏe đàn hồi [CHÍNH HÃNG ĐỘC QUYỀN]
+  Recommended Products:
+    1. [simple] Combo Simple Tẩy trang Micellar 200ml + Sữa rửa mặt 150ml + Nước hoa hồng 200ml ngừa mụn hiệu quả [CHÍNH HÃNG ĐỘC QUYỀN] (Score: 0.4682)
+       💡 Explanation: Bought by other users in your segment '🌱 Promising Newcomers (Satisfied)' who also bought 'Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+    2. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da mụn nhạy cảm 150ml (Score: 0.4078)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (52% match)
+    3. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da mụn nhạy cảm 150ml (Score: 0.3975)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (45% match)
+    4. [simple] Sữa rửa mặt Simple giúp da sạch thoáng & không chứa xà phòng 150ml [My Xeko] (Score: 0.3710)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (73% match)
+    5. [simple] SỮA RỬA MẶT SIMPLE GIÚP DƯỠNG ẨM CHO DA TRÔNG KHỎE VÀ MỊN MÀNG 150ML [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.3346)
+       💡 Explanation: Bought by other users in your segment '🌱 Promising Newcomers (Satisfied)' who also bought 'Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+
+  -------------------------------------------------------------
+  User ID: 413 | Segment: 💤 General/Hibernating (Group 4)
+  Purchase History (2 products):
+    - Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+    - Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]
+  Recommended Products:
+    1. [simple] SỮA RỬA MẶT SIMPLE GIÚP DƯỠNG ẨM CHO DA TRÔNG KHỎE VÀ MỊN MÀNG 150ML [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI] (Score: 0.4099)
+       💡 Explanation: Bought by other users in your segment '💤 General/Hibernating (Group 4)' who also bought 'Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da dầu mụn 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (also shares similar skin type/features)
+    2. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da mụn nhạy cảm 150ml (Score: 0.4078)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (52% match)
+    3. [simple] Sữa rửa mặt Simple giúp kiềm dầu và ngừa mụn hiệu quả - cho da mụn nhạy cảm 150ml (Score: 0.3975)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (45% match)
+    4. [simple] Sữa rửa mặt Simple giúp da sạch thoáng & không chứa xà phòng 150ml [My Xeko] (Score: 0.3710)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (73% match)
+    5. [no_brand] Sữa Rửa Mặt Vitamin E Thái Lan 190g (Score: 0.3146)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt Simple lành tính sạch thoáng - cho da nhạy cảm 150ml [CHÍNH HÃNG ĐỘC QUYỀN] [DIỆN MẠO MỚI]' (59% match)
+
+  -------------------------------------------------------------
+  User ID: 17089 | Segment: 💤 General/Hibernating (Group 0)
+  Purchase History (2 products):
+    - Sữa rửa mặt dành cho da dầu, mụn Cosrx Low PH Good Morning Gel Cleanser 150ml
+    - Gel rửa mặt Cosrx Low pH Good Morning Gel Cleanser
+  Recommended Products:
+    1. [COSRX] Sữa Rửa Mặt Cosrx Low pH Good Morning Gel 150ml (Score: 0.3920)
+       💡 Explanation: Bought by other users in your segment '💤 General/Hibernating (Group 0)' who also bought 'Sữa rửa mặt dành cho da dầu, mụn Cosrx Low PH Good Morning Gel Cleanser 150ml' (also shares similar skin type/features)
+    2. [COSRX] Sữa rửa mặt Cosrx Low pH Good Morning Gel Cleanser (Score: 0.3766)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt dành cho da dầu, mụn Cosrx Low PH Good Morning Gel Cleanser 150ml' (70% match)
+    3. [COSRX] Sữa Rửa Mặt Dạng Gel Cosrx Low pH Good Morning Gel Cleanser (Score: 0.3718)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt dành cho da dầu, mụn Cosrx Low PH Good Morning Gel Cleanser 150ml' (70% match)
+    4. [COSRX] Cosrx sữa rửa mặt Low pH Good Morning Gel Cleanser 150ml (Score: 0.3701)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt dành cho da dầu, mụn Cosrx Low PH Good Morning Gel Cleanser 150ml' (73% match)
+    5. [COSRX] Sữa rửa mặt Cosrx (Score: 0.3648)
+       💡 Explanation: Similar ingredients or features to 'Sữa rửa mặt dành cho da dầu, mụn Cosrx Low PH Good Morning Gel Cleanser 150ml' (71% match)
+
+  Saved sample recommendation runs: outputs/tables/recommender_samples.csv
+
+[3/3] Evaluating recommendation engine quality...
+  Running batch evaluation on 200 random users...
+
+  Recommendation Engine Performance Metrics:
+    1. Catalog Coverage: 24.38% (547 out of 2244 products recommended)
+    2. Recommendation Diversity (1 - Avg Similarity): 0.4959 (higher means recommended items are less redundant)
+    3. MBA Rule Hit Rate: 12.0% (percentage of recommendations driven by association rules)
+    4. Content Similarity Hit Rate: 88.0% (percentage of recommendations driven by content similarity)
+  Saved: outputs/tables/recommender_evaluation_metrics.csv
+
+============================================================
+PHASE 6 COMPLETE - Hybrid recommendation engine evaluation successful!
+============================================================

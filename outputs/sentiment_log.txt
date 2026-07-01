@@ -1,0 +1,57 @@
+============================================================
+PHASE 2: SENTIMENT ANALYSIS & SA-RFM
+============================================================
+  USE_PHOBERT         = True
+  MAX_PHOBERT_REVIEWS = 500000
+  PHOBERT_BATCH_SIZE  = 64
+  CHECKPOINT_EVERY    = 50000
+
+--- MODE 2: PhoBERT Sentiment Analysis ---
+  Loading: wonrax/phobert-base-vietnamese-sentiment ...
+  Device: cuda
+  column check OK: ['user_id', 'product_id', 'rating', 'product_name_x', 'cmt_date', 'shop_id', 'variation_x', 'product_quality', 'processed_comment', 'purchase_year', 'purchase_month', 'purchase_day_of_week', 'purchase_hour']
+  Counting rows in file...
+  File total rows : 369,100
+  Will process    : 369,100  (MAX_PHOBERT_REVIEWS=500000)
+  [checkpoint saved at row 50,000]
+  [checkpoint saved at row 100,000]
+  [checkpoint saved at row 150,000]
+  [checkpoint saved at row 200,000]
+  [checkpoint saved at row 250,000]
+  [checkpoint saved at row 300,000]
+  [checkpoint saved at row 350,000]
+
+  Done: 369,099 reviews in 28.0 min
+  Unique users: 304,708
+  Checkpoint removed (run complete)
+
+  -> Using MODE 2: PhoBERT sentiment
+
+--- Building SA-RFM Table ---
+  RFM loaded: 304,708 users
+  Sentiment computed: 304,708 users
+
+  SA-RFM: 304,708 users x 9 columns
+
+  Sentiment statistics:
+    mean = 0.5341
+    std  = 0.1736
+    min  = 0.0000
+    25%  = 0.5018
+    50%  = 0.5024
+    75%  = 0.5185
+    max  = 1.0000
+
+  Sentiment distribution:
+    Very Negative (0.0-0.2): 14,951
+    Negative      (0.2-0.4): 4,489
+    Neutral       (0.4-0.6): 234,598
+    Positive      (0.6-0.8): 20,153
+    Very Positive (0.8-1.0): 30,517
+
+  Saved: /content/drive/MyDrive/DSP/dataset/after_EDA/sarfm_table.csv  (31.2 MB)
+  Saved: /content/drive/MyDrive/DSP/dataset/after_EDA/sarfm_vectors.csv  (21.1 MB)
+
+============================================================
+PHASE 2 COMPLETE  (total time: 28.3 min)
+============================================================

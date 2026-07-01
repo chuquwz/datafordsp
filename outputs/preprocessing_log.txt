@@ -1,0 +1,55 @@
+============================================================
+PHASE 1: DATA PREPROCESSING & RFM ENGINEERING
+============================================================
+
+[1/7] Loading raw data...
+  products: 2,244 rows x 24 cols
+  attributes: 2,244 rows x 11 cols
+  shops: 1,291 rows x 11 cols
+
+[2/7] Cleaning products & attributes...
+  Products & attributes cleaned and imputed
+
+[3/7] Building price lookup...
+  Price lookup: 2244 products
+
+[4/7] Processing reviews (line-by-line for stability)...
+    Processed 100,000 rows...
+    Processed 200,000 rows...
+    Processed 300,000 rows...
+  Total reviews processed: 369,099
+  Empty comments: 9,681
+  Date range: ... to 2023-01-07 17:11:59
+  Unique users: 304,708
+
+[5/7] Computing RFM table...
+  RFM table: 304,708 users
+  Snapshot date: 2023-01-07
+
+  recency:
+    mean=352.03, std=299.95
+    min=0, 25%=126, 50%=277, 75%=510, max=2345
+
+  frequency:
+    mean=1.21, std=0.61
+    min=1, 25%=1, 50%=1, 75%=1, max=20
+
+  monetary:
+    mean=187151.83, std=164971.92
+    min=1000.0, 25%=87000, 50%=142000, 75%=237500, max=4016000.0
+
+[6/7] Normalizing RFM (Min-Max)...
+  recency_norm: INVERTED (1.0 = most recent)
+  frequency_norm: 0.0 = 1 purchase, 1.0 = 20 purchases
+  monetary_norm: 0.0 = 1,000 VND, 1.0 = 4,016,000 VND
+
+[7/7] Saving cleaned data...
+  reviews_cleaned.csv: 96.3 MB
+  products_cleaned.csv: 4.0 MB
+  attributes_cleaned.csv: 1.0 MB
+  shops_cleaned.csv: 0.1 MB
+  rfm_table.csv: 19.4 MB
+
+============================================================
+PHASE 1 COMPLETE - All data cleaned and saved!
+============================================================
