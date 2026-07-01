@@ -591,7 +591,7 @@
                 <div class="card-icon">📈</div>
                 <h3>Phần 4</h3>
                 <p class="text-sm">Đánh giá kết quả mô hình</p>
-                <p class="text-xs mt-8">Slides 21 — 24</p>
+                <p class="text-xs mt-8">Slides 21 — 25</p>
             </div>
         </div>
     </div>
@@ -1498,7 +1498,7 @@
             </div>
         </div>
         <div class="highlight-box mt-24 anim anim-d4">
-            <strong>Nhận xét:</strong> Biểu đồ PCA 2D cho thấy 5 cụm có sự phân tách rõ ràng. Parallel coordinates cho thấy chiều <strong>Sentiment</strong> là yếu tố phân biệt mạnh nhất — nhóm Negative Detractors (S≈0.09) nằm hoàn toàn tách biệt khỏi các nhóm tích cực (S≈1.0).
+            <strong>Nhận xét:</strong> Biểu đồ PCA 2D phản ánh sự phân bố cụm tập trung rõ ràng. Trục tọa độ song song (Parallel coordinates) chỉ ra <strong>Sentiment (Cảm xúc)</strong> là đặc trưng phân hóa mạnh nhất: tách biệt hoàn toàn nhóm Negative Detractors (S≈0.06) khỏi các nhóm trung tính (S≈0.51) và hài lòng (S≈0.88).
         </div>
     </div>
 
@@ -1546,32 +1546,83 @@
         </div>
     </div>
 
-    <!-- ==================== SLIDE 24: DASHBOARD ==================== -->
+    <!-- ==================== SLIDE 24: PHÂN TÍCH CẢM XÚC & QUY MÔ PHÂN KHÚC ==================== -->
     <div class="slide" data-slide="24">
         <div class="slide-label anim">Phần 4 · Đánh giá kết quả</div>
-        <h2 class="anim anim-d1">Dashboard Tổng Hợp</h2>
-        <div class="grid-2 mt-16">
-            <div class="img-container anim anim-d2">
-                <img src="outputs/figures/dashboard_segment_sizes.png" alt="Phân bố kích thước 5 cụm khách hàng">
-                <div class="img-caption">Phân bố tỷ lệ 5 phân khúc khách hàng</div>
+        <h2 class="anim anim-d1">Phân Tích Cảm Xúc & Phân Phúc</h2>
+        <div class="two-col mt-24">
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="img-container anim anim-d2" style="padding: 8px;">
+                    <img src="outputs/figures/dashboard_segment_sizes.png" alt="Phân bố kích thước 5 cụm khách hàng" style="max-height: 180px;">
+                    <div class="img-caption">Quy mô phân phối 5 phân khúc khách hàng</div>
+                </div>
+                <div class="img-container anim anim-d2" style="padding: 8px;">
+                    <img src="outputs/figures/dashboard_sentiment_dist.png" alt="Phân bố điểm cảm xúc khách hàng" style="max-height: 180px;">
+                    <div class="img-caption">Phân bố điểm cảm xúc dựa trên PhoBERT</div>
+                </div>
             </div>
-            <div class="img-container anim anim-d2">
-                <img src="outputs/figures/dashboard_sentiment_dist.png" alt="Phân bố điểm cảm xúc khách hàng">
-                <div class="img-caption">Phân bố điểm cảm xúc (Sentiment)</div>
-            </div>
-            <div class="img-container anim anim-d3">
-                <img src="outputs/figures/dashboard_mba_rules_scatter.png" alt="Scatter plot luật kết hợp giỏ hàng">
-                <div class="img-caption">Phân phối luật MBA — Lift vs Support (màu: Cosine Sim)</div>
-            </div>
-            <div class="img-container anim anim-d3">
-                <img src="outputs/figures/dashboard_recommender_hits.png" alt="Nguồn đóng góp hệ gợi ý">
-                <div class="img-caption">Tỷ trọng đóng góp nguồn gợi ý (MBA vs Content vs Pop)</div>
+            <div class="card card-accent anim anim-d3">
+                <h3>🔍 Phân Tích & Đánh Giá</h3>
+                
+                <div class="card card-green mt-16" style="padding: 12px; border-left-width: 3px;">
+                    <p class="fw-600 text-green text-sm">1. Phân bố Phân khúc Khách hàng</p>
+                    <ul class="text-xs mt-4">
+                        <li>Phân khúc trung tính <strong>General/Hibernating (Group 0, 1, 4)</strong> chiếm tỷ lệ áp đảo (~83.5%), phản ánh đa số người dùng hoạt động ở mức cơ bản.</li>
+                        <li>Phân khúc mới tiềm năng <strong>Promising Newcomers</strong> chiếm ~10.0%, đóng vai trò quan trọng trong việc thúc đẩy tăng trưởng doanh số mới.</li>
+                        <li>Phân khúc tiêu cực <strong>Negative Detractors</strong> chiếm 4.9% - đây là nhóm VIP bất mãn cần được ưu tiên chăm sóc khẩn cấp.</li>
+                    </ul>
+                </div>
+                
+                <div class="card card-purple mt-12" style="padding: 12px; border-left-width: 3px;">
+                    <p class="fw-600 text-purple text-sm">2. Đánh giá Cảm xúc (PhoBERT)</p>
+                    <ul class="text-xs mt-4">
+                        <li>Việc dùng mô hình học sâu <strong>PhoBERT</strong> mang lại phân bố thực tế với nhóm <strong>Neutral chiếm 77%</strong>, phản ánh đúng ngữ cảnh viết bình luận thực tế thay vì thiên vị hoàn toàn về tích cực như điểm rating thô.</li>
+                        <li>Tỷ lệ <strong>Very Negative là 4.9%</strong> tương ứng sát với số lượng Detractors, chứng minh sự đồng bộ cao giữa cảm xúc văn bản học được và kết quả phân cụm.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SLIDE 25: KẾT LUẬN ==================== -->
-    <div class="slide slide-cover" data-slide="25">
+    <!-- ==================== SLIDE 25: PHÂN TÍCH LUẬT KẾT HỢP & NGUỒN GỢI Ý ==================== -->
+    <div class="slide" data-slide="25">
+        <div class="slide-label anim">Phần 4 · Đánh giá kết quả</div>
+        <h2 class="anim anim-d1">Phân Tích Luật Kết Hợp & Đóng Góp Gợi Ý</h2>
+        <div class="two-col mt-24">
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="img-container anim anim-d2" style="padding: 8px;">
+                    <img src="outputs/figures/dashboard_mba_rules_scatter.png" alt="Scatter plot luật kết hợp giỏ hàng" style="max-height: 180px;">
+                    <div class="img-caption">Phân phối luật MBA — Lift vs Support (màu: Cosine Sim)</div>
+                </div>
+                <div class="img-container anim anim-d2" style="padding: 8px;">
+                    <img src="outputs/figures/dashboard_recommender_hits.png" alt="Nguồn đóng góp hệ gợi ý" style="max-height: 180px;">
+                    <div class="img-caption">Tỷ trọng nguồn gợi ý đóng góp vào danh sách Top-K</div>
+                </div>
+            </div>
+            <div class="card card-green anim anim-d3">
+                <h3>🔍 Phân Tích & Đánh Giá</h3>
+                
+                <div class="card card-accent mt-16" style="padding: 12px; border-left-width: 3px;">
+                    <p class="fw-600 text-accent text-sm">1. Biểu đồ phân phối luật (MBA Scatter)</p>
+                    <ul class="text-xs mt-4">
+                        <li>Hầu hết các luật có <strong>Support thấp (0.0005 - 0.002)</strong> nhưng đạt <strong>Lift cực kỳ cao (lên tới 1340)</strong>. Điều này chứng minh các sản phẩm skincare thường được mua chéo theo cặp đặc trị rất chuyên biệt.</li>
+                        <li>Độ tương đồng ngữ nghĩa (Cosine Similarity) của các cặp mua kèm cao (màu cam/đỏ trên biểu đồ) cho thấy thói quen mua chéo các sản phẩm cùng bộ hoặc cùng công dụng (ví dụ: bộ trị mụn tràm trà, bộ dưỡng chống lão hóa vàng 24k).</li>
+                    </ul>
+                </div>
+                
+                <div class="card card-orange mt-12" style="padding: 12px; border-left-width: 3px;">
+                    <p class="fw-600 text-orange text-sm">2. Đóng góp của Hệ gợi ý lai (Hits)</p>
+                    <ul class="text-xs mt-4">
+                        <li><strong>Content Similarity đóng góp 88.0%</strong>: Là cốt lõi giải quyết bài toán gợi ý nhờ khai thác tối đa không gian nhúng đa phương thức 128 chiều.</li>
+                        <li><strong>MBA Rules đóng góp 12.0%</strong>: Dù tỷ lệ nhỏ nhưng đây là thành phần quan trọng tạo ra các gợi ý chéo ngẫu nhiên nhưng có tính logic giỏ hàng (Complementary items), tăng trải nghiệm mua sắm chéo.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 26: KẾT LUẬN ==================== -->
+    <div class="slide slide-cover" data-slide="26">
         <div class="cover-badge anim">🎯 Kết luận</div>
         <h1 class="anim anim-d1" style="font-size:34px;">Kết Luận & Hướng Phát Triển</h1>
         <div style="max-width:800px; text-align:left; margin:32px auto 0;" class="anim anim-d2">
@@ -1609,7 +1660,7 @@
 <button class="nav-btn nav-prev" onclick="changeSlide(-1)" aria-label="Previous slide">◂</button>
 <button class="nav-btn nav-next" onclick="changeSlide(1)" aria-label="Next slide">▸</button>
 <div class="progress-bar" id="progressBar"></div>
-<div class="slide-counter" id="slideCounter">1 / 25</div>
+<div class="slide-counter" id="slideCounter">1 / 26</div>
 
 <script>
     // ===== SLIDE ENGINE =====
