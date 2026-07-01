@@ -161,7 +161,9 @@ graph TD
 * **Đầu vào**: Dữ liệu lịch sử khách hàng, nhãn phân cụm khách hàng, các luật kết hợp giỏ hàng và ma trận nhúng sản phẩm.
 * **Thuật toán & Xử lý**:
   * Xây dựng hệ gợi ý lai (Hybrid Recommender) chấm điểm sản phẩm ứng viên cho mỗi người dùng dựa trên 3 tiêu chí:
-    $$\text{Score} = w_{\text{mba}} \cdot \text{Score}_{\text{MBA}} + w_{\text{sim}} \cdot \text{Similarity}_{\text{Cosine}} + w_{\text{pop}} \cdot \text{Score}_{\text{Popularity}}$$
+
+$$\text{Score} = w_{\text{mba}} \cdot \text{Score}_{\text{MBA}} + w_{\text{sim}} \cdot \text{Similarity}_{\text{Cosine}} + w_{\text{pop}} \cdot \text{Score}_{\text{Popularity}}$$
+
     (Mặc định tỷ lệ trọng số là: MBA 40%, Content Similarity 40%, Popularity 20%).
   * Loại bỏ các sản phẩm khách hàng đã mua trước đó.
   * Tự động tạo câu lý giải (explanations) cho từng sản phẩm gợi ý dựa trên hành vi mua kèm của cụm hoặc sự tương đồng về thành phần/công dụng.
