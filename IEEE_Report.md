@@ -166,10 +166,7 @@ K = 5 was selected as the optimal cluster count based on the elbow inflection po
 
 ### D. Phase 4: Multimodal Product Embedding
 
-**Text embedding.** All textual product attributes (name, brand, type, skin type, description, ingredient, feature) are concatenated into a single document per product. Two encoding modes are supported:
-
-- **Fallback mode (TF-IDF + LSA):** A TF-IDF vectorizer with 5,000 features and bigram support, followed by Truncated SVD to 128 dimensions.
-- **Enhanced mode (SentenceTransformer):** The `paraphrase-multilingual-MiniLM-L12-v2` model encodes product descriptions into 384-dimensional vectors, reduced to 128 via PCA.
+**Text embedding.** All textual product attributes (name, brand, type, skin type, description, ingredient, feature) are concatenated into a single document per product. The text embedding is generated using the pre-trained `paraphrase-multilingual-MiniLM-L12-v2` model from the SentenceTransformers library, which encodes the product documents into 384-dimensional dense semantic vectors. These are subsequently reduced to 128 dimensions via PCA.
 
 **Visual embedding.** Since physical image files are unavailable, deterministic hash-based mock visual embeddings are generated from image filenames using SHA-256 hashing, producing normalized 128-dimensional pseudo-visual vectors.
 

@@ -666,20 +666,23 @@
         <div class="slide-label anim">Phần chuẩn bị · Bước 4</div>
         <h2 class="anim anim-d1">Chuẩn Hóa & Biến Đổi Dữ Liệu</h2>
         <div class="two-col mt-24">
-            <div class="card card-accent anim anim-d2">
+            <div class="card card-accent anim anim-d2" style="font-size: 13.5px;">
                 <h3>Chuẩn hóa SA-RFM (Khách hàng)</h3>
                 <ul class="mt-8">
-                    <li>Chuẩn hóa Min-Max các chỉ số R, F, M. Nghịch đảo giá trị Recency (1.0 - norm) để giao dịch càng mới điểm R càng cao.</li>
-                    <li>Tính trọng số cảm xúc theo thời gian (Recency-Weighted Sentiment) để phản ánh đúng tâm lý gần nhất:
-                        <div class="text-xs text-accent mt-8 fw-600">Weight = exp(-Delta_t / 365.0)</div>
+                    <li><strong>Nghịch đảo Recency (1.0 - norm):</strong> Đồng bộ hóa hướng tăng với F và M (giá trị lớn = hoạt động tích cực). Công thức: R_norm = 1 - (R - R_min)/(R_max - R_min).
+                        <br><small class="text-secondary">💡 <em>Ví dụ:</em> User A mua 1 ngày trước → R_norm ≈ 1.0 (rất mới). User B mua 365 ngày trước → R_norm ≈ 0.0 (rất cũ).</small>
+                    </li>
+                    <li class="mt-8"><strong>Trọng số cảm xúc theo thời gian:</strong> Tâm lý khách hàng thay đổi theo thời gian, bình luận cũ ít phản ánh hiện trạng hơn bình luận mới. Sử dụng hàm suy giảm mũ:
+                        <div class="text-xs text-accent mt-4 fw-600">w = exp(-Delta_t / 365.0)</div>
+                        <small class="text-secondary">Tỷ lệ chia 365 thiết lập chu kỳ suy giảm theo năm (trọng số giảm còn ~0.37 sau đúng 1 năm).</small>
                     </li>
                 </ul>
             </div>
-            <div class="card card-orange anim anim-d3">
+            <div class="card card-orange anim anim-d3" style="font-size: 13.5px;">
                 <h3>Biến đổi Đa phương thức (Sản phẩm)</h3>
                 <ul class="mt-8">
-                    <li>Nối các trường văn bản mô tả sản phẩm rồi mã hóa bằng TF-IDF + PCA thành vectơ đặc trưng văn bản 128 chiều (hoặc dùng SentenceTransformer).</li>
-                    <li>Nối chung vectơ văn bản, ảnh giả lập, và các biến phân loại được label-encode rồi dùng PCA giảm về không gian nhúng thống nhất <strong>128 chiều</strong> cho mỗi sản phẩm.</li>
+                    <li><strong>Mô hình SentenceTransformer:</strong> Mã hóa toàn bộ mô tả sản phẩm bằng mô hình pre-trained <code>paraphrase-multilingual-MiniLM-L12-v2</code> để giữ trọn vẹn ngữ nghĩa tiếng Việt của tên và thành phần mỹ phẩm, tạo vectơ nhúng chất lượng cao (loại bỏ hoàn toàn TF-IDF + PCA ở khâu văn bản thô).</li>
+                    <li class="mt-8"><strong>Nối ghép & Giảm chiều:</strong> Nối chung vectơ văn bản (SentenceTransformer), đặc trưng ảnh giả lập, và các biến phân loại rồi dùng PCA giảm về không gian nhúng thống nhất <strong>128 chiều</strong> cho mỗi sản phẩm.</li>
                 </ul>
             </div>
         </div>
