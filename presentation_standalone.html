@@ -1767,22 +1767,24 @@
                     <div class="img-caption">Tỷ trọng nguồn gợi ý đóng góp vào danh sách Top-K</div>
                 </div>
             </div>
-            <div class="card card-green anim anim-d3">
-                <h3>🔍 Phân Tích & Đánh Giá</h3>
+            <div class="card card-green anim anim-d3" style="text-align: left; font-size: 13.5px;">
+                <h3>🔍 Phân Tích Kỹ Thuật Biểu Đồ</h3>
                 
-                <div class="card card-accent mt-16" style="padding: 12px; border-left-width: 3px;">
-                    <p class="fw-600 text-accent text-sm">1. Biểu đồ phân phối luật (MBA Scatter)</p>
-                    <ul class="text-xs mt-4">
-                        <li>Hầu hết các luật có <strong>Support thấp (0.0005 - 0.002)</strong> nhưng đạt <strong>Lift cực kỳ cao (lên tới 1340)</strong>. Điều này chứng minh các sản phẩm skincare thường được mua chéo theo cặp đặc trị rất chuyên biệt.</li>
-                        <li>Độ tương đồng ngữ nghĩa (Cosine Similarity) của các cặp mua kèm cao (màu cam/đỏ trên biểu đồ) cho thấy thói quen mua chéo các sản phẩm cùng bộ hoặc cùng công dụng (ví dụ: bộ trị mụn tràm trà, bộ dưỡng chống lão hóa vàng 24k).</li>
+                <div class="card card-accent mt-12" style="padding: 12px; border-left-width: 3px; font-size: 12.5px;">
+                    <p class="fw-600 text-accent text-sm">1. Phân phối luật MBA (Lift vs Support)</p>
+                    <ul class="text-xs mt-4" style="line-height: 1.4;">
+                        <li><strong>Các Trục:</strong> Trục hoành là <strong>Support (%)</strong> - tần suất mua cùng nhau trong giỏ hàng (hầu hết < 0.4% do tệp sản phẩm đa dạng). Trục tung là <strong>Confidence (%)</strong> - xác suất mua kèm sản phẩm B khi đã chọn A.</li>
+                        <li><strong>Chỉ số Lift (Thanh màu):</strong> Thể hiện độ nâng. Trị số Lift > 1,200 (màu vàng sáng) chỉ ra mối liên kết mua kèm cực kỳ mạnh mẽ giữa các sản phẩm bổ trợ.</li>
+                        <li><strong>Cosine Similarity (Kích thước chấm):</strong> Chấm nhỏ + Lift cao thể hiện các gợi ý bổ trợ khác công dụng (như SRM + Bông tẩy trang) tạo tính bất ngờ hợp lý (serendipity).</li>
                     </ul>
                 </div>
                 
-                <div class="card card-orange mt-12" style="padding: 12px; border-left-width: 3px;">
-                    <p class="fw-600 text-orange text-sm">2. Đóng góp của Hệ gợi ý lai (Hits)</p>
-                    <ul class="text-xs mt-4">
-                        <li><strong>Content Similarity đóng góp 88.0%</strong>: Là cốt lõi giải quyết bài toán gợi ý nhờ khai thác tối đa không gian nhúng đa phương thức 128 chiều.</li>
-                        <li><strong>MBA Rules đóng góp 12.0%</strong>: Dù tỷ lệ nhỏ nhưng đây là thành phần quan trọng tạo ra các gợi ý chéo ngẫu nhiên nhưng có tính logic giỏ hàng (Complementary items), tăng trải nghiệm mua sắm chéo.</li>
+                <div class="card card-orange mt-12" style="padding: 12px; border-left-width: 3px; font-size: 12.5px;">
+                    <p class="fw-600 text-orange text-sm">2. Đóng góp của Hệ gợi ý lai (Fidelity Hits)</p>
+                    <ul class="text-xs mt-4" style="line-height: 1.4;">
+                        <li><strong>Trục hoành/tung:</strong> Trục hoành là các module thuật toán. Trục tung là tỷ trọng đóng góp thực tế (%) vào 1,000 gợi ý thử nghiệm.</li>
+                        <li><strong>Content Semantic Similarity (88.0%):</strong> Đóng vai trò xương sống, đảm bảo gợi ý bám sát nhu cầu cốt lõi về da (trị mụn, cấp ẩm) từ vector nhúng.</li>
+                        <li><strong>MBA Rules (12.0%):</strong> Gợi ý chéo bổ trợ theo hành vi phân khúc, tăng giá trị giỏ hàng thực tế. Tỷ lệ 88:12 là tỷ lệ vàng tối ưu hóa Relevance & Discovery.</li>
                     </ul>
                 </div>
             </div>
