@@ -28,7 +28,7 @@ To overcome these limitations, we propose a multimodal data mining framework tha
 
 - **Builds a segment-aware hybrid recommender** that combines Market Basket Association (MBA) rules, content-based cosine similarity, and popularity scoring, personalized to each customer segment.
 
-The system is evaluated on real-world data from Tiki, one of the largest e-commerce platforms in Vietnam, encompassing 369,099 transaction reviews across 304,708 unique customers and 2,244 skincare products.
+The system is evaluated on the benchmark ViEcomRec dataset, a real-world Vietnamese e-commerce dataset compiled from Tiki, encompassing 369,099 transaction reviews across 304,708 unique customers and 2,244 skincare products.
 
 ---
 
@@ -102,7 +102,7 @@ graph TD
 
 ### A. Phase 1: Data Preprocessing and RFM Engineering
 
-**Input data.** The system processes four raw CSV datasets from Tiki: (1) `data_reviews_purchase.csv` — 369,099 customer review/transaction records; (2) `data_product.csv` — 2,244 product listings; (3) `data_product_attribute.csv` — product attributes (ingredients, skin type, brand, origin); (4) `data_shop.csv` — 1,291 seller profiles.
+**Input data.** The system processes four raw CSV files from the benchmark ViEcomRec dataset (which is compiled from Tiki): (1) `data_reviews_purchase.csv` — 369,099 customer review/transaction records; (2) `data_product.csv` — 2,244 product listings; (3) `data_product_attribute.csv` — product attributes (ingredients, skin type, brand, origin); (4) `data_shop.csv` — 1,291 seller profiles.
 
 **Text cleaning.** Vietnamese text in reviews and product descriptions is cleaned by removing URLs, normalizing whitespace, and converting to lowercase. Missing values are imputed according to domain rules: `ingredient → 'unknown'`, `skin_type → 'all_skin'`, `brand → 'no_brand'`.
 
